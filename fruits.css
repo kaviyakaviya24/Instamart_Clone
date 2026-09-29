@@ -1,0 +1,53 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial}
+body{background:#fff;color:#111}
+.top{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:10}
+.back{font-size:20px;text-decoration:none;color:#111}
+.top-icon{width:32px;height:32px;border-radius:8px;background:#f0f0f0}
+.top h1{font-size:20px}
+.top p{font-size:20px;color:#666}
+.search{margin-left:auto;font-size:20px}
+
+.layout{display:flex;max-width:1300px;margin:0 auto}
+.sidebar{width:160px;border-right:1px solid #f0f0f0;padding:20px 10px;display:flex;flex-direction:column;gap:95px}
+.cat{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font-size:17px;color:#555}
+.cat-img{width:48px;height:48px;background:#f8f4ff;border-radius:12px;display:grid;place-items:center;font-size:35px}
+.cat.active .cat-img{background:#f3e6ff;border:2px solid #c8a6ff}
+.cat.active span{font-weight:700;color:#111}
+
+.content{flex:1;padding:14px}
+.filters{display:flex;gap:8px;overflow:auto;padding-bottom:10px}
+.chip{white-space:nowrap;border:1px solid #e5e7eb;padding:7px 12px;border-radius:20px;font-size:20px;background:#fff}
+.filter{border:1px solid #e5e7eb;width:32px;height:32px;border-radius:50%;display:grid;place-items:center}
+
+.products{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.p-card{border:1px solid #f0f0f0;border-radius:12px;padding:10px;background:#fff}
+.p-img-wrap{position:relative;background:#f9fbff;border-radius:8px;height:160px;display:grid;place-items:center;overflow:hidden}
+.p-img-wrap img{width:90%;height:200px;object-fit:contain}
+.add{position:absolute;top:8px;right:8px;width:26px;height:26px;border:1px solid #b8d4ff;border-radius:6px;background:#fff;color:#2b7fff;font-weight:700}
+.ad{position:absolute;bottom:6px;left:6px;font-size:9px;background:#f3f4f6;padding:2px 5px;border-radius:4px;color:#888}
+.p-card h3{font-size:15px;margin:10px 0 6px;line-height:1.3}
+.desc{font-size:15px;color:#6b7280;line-height:1.3;height:28px;overflow:hidden}
+.qty{font-size:15px;color:#555;margin-top:8px}
+.off{font-size:15px;color:#1a9e7a;font-weight:700;margin-top:4px}
+.price{font-size:15px;font-weight:700;margin-top:2px}
+.price del{font-size:15px;color:#9ca3af;font-weight:400;margin-left:4px}
+
+/* MOBILE RESPONSIVE DA */
+@media(max-width:768px){
+  .layout{flex-direction:column}
+  .sidebar{width:100%;flex-direction:row;overflow:auto;gap:16px;padding:12px;border-right:none;border-bottom:1px solid #f0f0f0}
+  .cat{min-width:80px}
+  .products{grid-template-columns:1fr 1fr;gap:10px}
+  .p-img-wrap{height:130px}
+}
+@media(max-width:480px){
+  .products{grid-template-columns:1fr 1fr}
+  .p-img-wrap{height:110px}
+  .p-card h3{font-size:12px}
+  .top h1{font-size:13px}
+  .filters{padding-bottom:6px}
+  .chip{font-size:11px;padding:6px 10px}
+}
+@media(max-width:360px){
+  .products{grid-template-columns:1fr} /* chotta mobile la 1 column da */
+}

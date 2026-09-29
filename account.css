@@ -1,0 +1,49 @@
+/* My Account Styles */
+.account-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.account-btn {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.account-dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background:black;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  width: 260px;
+  padding: 15px;
+  z-index: 999;
+}
+
+.dropdown-title {
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.dropdown-item {
+  padding: 10px 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f7f7f7;
+  border-radius: 6px;
+  padding-left: 8px;
+}
+
+.logout {
+  color: red;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 10px;
+}

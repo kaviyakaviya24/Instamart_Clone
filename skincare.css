@@ -1,0 +1,69 @@
+*{
+    margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial}
+body{
+    background:#fff;color:#222}
+.top{
+    display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:10}
+.left{
+    display:flex;gap:12px;align-items:center}
+.left span{
+    font-size:22px}
+.icon{
+    width:36px;height:36px;background:#eef5ff;border-radius:8px;display:grid;place-items:center}
+.top h3{
+    font-size:20px} .top p{font-size:17px;color:gray}
+.main{display:flex}
+.sidebar{
+    width:200px;background:#f8fbff;padding:12px;border-right:1px solid #eee;min-height:100vh}
+.cat{
+    text-align:center;padding:18px 8px;border-radius:14px;margin-bottom:10px;cursor:pointer}
+.cat.active{
+    background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.07);border-left:4px solid #7b5ea7}
+.cat span{
+    font-size:28px}
+.cat p{
+    font-size:18px;font-weight:600;margin-top:8px;color:#555}
+.cat.active p{
+    color:#7b5ea7}
+.products{
+    flex:1;padding:16px}
+.grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{
+    border:1px solid #f1f1f1;border-radius:16px;padding:12px;background:#fff}
+.img-box{
+    height:180px;display:grid;place-items:center;position:relative}
+.img-box img{
+    width:85%;height:150px;object-fit:contain}
+.img-box button{
+    position:absolute;top:6px;right:6px;width:28px;height:28px;border:1px solid #3b82f6;background:#fff;color:#3b82f6;border-radius:8px;font-size:18px}
+.ad{
+    font-size:9px;background:#eee;padding:2px 6px;border-radius:4px}
+.time{
+    font-size:10px;color:#555;font-weight:700;margin-top:6px}
+.card h4{
+    font-size:15px;line-height:1.4;margin:6px 0}
+.sub,.qty{
+    font-size:20px;color:gray}
+.off{
+    font-size:15px;color:#0a8a5b;font-weight:700;margin:4px 0}
+.price{
+    font-weight:700;font-size:17px} .price del{color:gray;font-weight:400;font-size:11px}
+.sold{
+    font-size:10px;background:#ffe9e9;color:#b00000;padding:3px 6px;border-radius:4px;display:inline-block;font-weight:700}
+
+/* --- MOBILE RESPONSIVE - INSTAMART APP MAARI --- */
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .main{flex-direction:column}
+  .sidebar{width:100%;display:flex;overflow-x:auto;gap:10px;min-height:auto;padding:10px;border-right:none;border-bottom:1px solid #eee;scrollbar-width:none}
+  .sidebar::-webkit-scrollbar{display:none}
+  .cat{min-width:105px;flex-shrink:0;margin-bottom:0;padding:14px 6px}
+  .cat span{font-size:24px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .products{padding:10px}
+  .img-box{height:140px}
+  .top{padding:10px 12px}
+}

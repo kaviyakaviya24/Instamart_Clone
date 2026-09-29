@@ -1,0 +1,126 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Location Popup</title>
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Arial, sans-serif;}
+body{background:#f0f0f0;}
+
+/* NAV - un Farm to Home */
+.navbar{
+  background:white; padding:14px 24px; display:flex; align-items:center; gap:20px;
+}
+.logo{font-weight:800; color:#0066ff; font-size:20px;}
+.loc-btn{
+  cursor:pointer; line-height:1.2; display:flex; align-items:center; gap:5px;
+}
+.loc-btn b{font-size:14px; color:#000;}
+.loc-btn small{font-size:11px; color:gray; display:block;}
+
+/* ===== POPUP DESIGN - ITHU THAN DA UN PHOTO LA IRUKKU ===== */
+.overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,0.45);
+  display:flex; align-items:center; justify-content:center; z-index:999;
+}
+.modal{
+  background:#FFFEF5; width:90%; max-width:720px; border-radius:20px;
+  padding:28px 28px 28px 32px; position:relative;
+  box-shadow:0 20px 50px rgba(0,0,0,0.2);
+  display:flex; justify-content:space-between; align-items:center; gap:20px;
+}
+.close{
+  position:absolute; top:14px; right:14px; width:28px; height:28px;
+  border:none; background:#f0f0f0; border-radius:50%; cursor:pointer; font-size:16px;
+}
+.left h2{
+  font-size:28px; font-weight:700; color:#2b2b2b; line-height:1.25; max-width:420px;
+}
+.search-row{
+  display:flex; gap:12px; margin-top:32px; align-items:center;
+}
+.input-box{
+  display:flex; align-items:center; background:white; border:1.5px solid #ececec;
+  border-radius:12px; padding:14px 16px; width:360px;
+}
+.input-box input{
+  border:none; outline:none; width:100%; font-size:14px; color:#333;
+}
+.input-box input::placeholder{color:#aaa;}
+.input-box span{color:#aaa; font-size:18px;}
+
+.share-btn{
+  background:#0A84FF; color:white; border:none; border-radius:12px;
+  padding:14px 22px; font-weight:700; font-size:15px; cursor:pointer;
+  display:flex; align-items:center; gap:8px; white-space:nowrap;
+  box-shadow:0 4px 12px rgba(10,132,255,0.3);
+}
+.share-btn:hover{background:#0066d6;}
+
+.map-icon{
+  width:110px; height:110px; min-width:110px; background:#fff;
+  border-radius:50%; display:grid; place-items:center; position:relative;
+}
+.map-icon::before{
+  content:''; position:absolute; inset:0; border-radius:50%;
+  background:radial-gradient(circle, #eef6ff 0%, #ffffff 70%);
+  z-index:0;
+}
+.map-icon span{font-size:42px; z-index:1; position:relative;}
+
+/* Mobile */
+@media(max-width:650px){
+  .modal{flex-direction:column; align-items:flex-start;}
+  .search-row{flex-direction:column; width:100%;}
+  .input-box, .share-btn{width:100%; justify-content:center;}
+  .map-icon{display:none;}
+  .left h2{font-size:22px;}
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">Farm To Home</div>
+  <div class="loc-btn" id="openBtn">
+    <div>📍</div>
+    <div>
+      <b>Add your location</b>
+      <small>To see items in your area ▼</small>
+    </div>
+  </div>
+</div>
+
+<!-- LOCATION POPUP -->
+<div class="overlay" id="modal">
+  <div class="modal">
+    <button class="close" id="closeBtn">✕</button>
+    
+    <div class="left">
+      <h2>Share location to find<br>the closest Instamart store</h2>
+      
+      <div class="search-row">
+        <div class="input-box">
+          <input type="text" placeholder="Search for an area or address">
+          <span>🔍</span>
+        </div>
+        <button class="share-btn">🎯 Share location</button>
+      </div>
+    </div>
+
+    <div class="map-icon"><span>📍</span></div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  document.getElementById('closeBtn').onclick = () => modal.style.display='none';
+  document.getElementById('openBtn').onclick = () => modal.style.display='flex';
+  modal.onclick = (e) => { if(e.target === modal) modal.style.display='none'; }
+</script>
+
+</body>
+</html>
